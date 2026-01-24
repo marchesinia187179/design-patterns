@@ -69,4 +69,38 @@ classDiagram
     PaymentStrategy <|.. CreditCard : implements
     PaymentStrategy <|.. Paypal : implements
     ShoppingCart o-- Item : aggregates
+
     ShoppingCart ..> PaymentStrategy : uses (Strategy)
+```
+
+---
+
+## Usage
+The `App.java` class demonstrates how to interact with the system. You can switch between `CreditCard` and `Paypal` seamlessly at runtime.
+
+```java
+import ConcreteStrategy.CreditCard;
+import ConcreteStrategy.Paypal;
+import Context.ShoppingCart;
+import Model.Item;
+
+public class App {
+    public static void main(String[] args) throws Exception {
+        // Initialize the Context
+        ShoppingCart cart = new ShoppingCart();
+
+        // Add items to the cart
+        Item item1 = new Item("1234", 8.90);
+        Item item2 = new Item("5678", 5.99);
+        cart.addItem(item1);
+        cart.addItem(item2);
+
+        // Pay using Credit Card Strategy
+        cart.pay(new CreditCard("1234-5678-9012-3456"));
+        
+        // Modify cart and pay using Paypal Strategy
+        cart.removeItem(item2);
+        cart.pay(new Paypal("email@example.com"));
+    }
+}
+```
