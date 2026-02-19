@@ -94,7 +94,7 @@ classDiagram
 ---
 
 ## Usage
-The App.java class demonstrates the lifecycle of a coffee purchase. Note how the CoffeeMachine object's response to the same method calls changes as it moves through its internal states.
+The `App.java` class demonstrates the lifecycle of a coffee purchase. Note how the `CoffeeMachine` object's response to the same method calls changes as it moves through its internal states.
 
 ```java
 import Context.CoffeeMachine;
