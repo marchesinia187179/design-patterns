@@ -59,7 +59,7 @@ classDiagram
 ---
 
 ## Usage
-The `App.java class demonstrates how to use the template method. Note that the client code interacts with the beverages through the abstract `CaffeineBeverage` type.
+The `App.java` class demonstrates how to use the template method. Note that the client code interacts with the beverages through the abstract `CaffeineBeverage` type.
 
 ```java
 import Implementation.Coffee;
